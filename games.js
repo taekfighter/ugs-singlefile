@@ -2316,7 +2316,7 @@ let files = [
   "clfinalfantasy2nes",
   "clfinalfantasy3nes",
   "clfinalfantasyIX",
-  "clfivenightsatepsteins",
+  //"clfivenightsatepsteins",
   "clfivenightsatshreks",
   "clfnaf3remastered",
   "clfnafshooter",
