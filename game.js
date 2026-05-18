@@ -2792,11 +2792,15 @@ function generateAllSections() {
           fetch(
             `https://cdn.jsdelivr.net/gh/bubbls/ugs-singlefile/UGS-Files/${encoded}?t=${Date.now()}`,
           )
+            .then((response) => response.text())
             .then((text) => {
-  const blob = new Blob([text], { type: "text/html" });
-  const url = URL.createObjectURL(blob);
-  window.open(url, "_blank");
-});
+              const newWin = window.open("about:blank", "_blank");
+              if (newWin) {
+                newWin.document.open();
+                newWin.document.write(text);
+                newWin.document.close();
+              }
+            });
         };
         btn.style.width = "100%";
         btn.style.height = "100%";
